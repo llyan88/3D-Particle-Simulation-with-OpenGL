@@ -1,0 +1,47 @@
+; =============================================================================
+; ECE 6122 Particle Simulation – Configuration
+; =============================================================================
+; Lines beginning with ';' are comments.
+; All values have built-in defaults; this file only overrides what you change.
+
+[window]
+width       = 1280
+height      = 720
+title       = ECE 6122 – 3D Particle Simulation
+
+[simulation]
+; Maximum number of particles in the pool (pre-allocated at startup)
+max_particles = 30000
+
+; New particles spawned per second (fountain / vortex modes)
+spawn_rate    = 2500
+
+; Number of OpenMP worker threads for the physics update
+num_threads   = 8
+
+[physics]
+; Gravitational acceleration components (m/s^2)
+gravity_x = 0.0
+gravity_y = -9.81
+gravity_z = 0.0
+
+; Coefficient of restitution for boundary collisions [0 = perfectly inelastic, 1 = elastic]
+restitution = 0.65
+
+[emitter]
+; Type: 0 = Fountain,  1 = Explosion (cyclic),  2 = Vortex
+emitter_type = 0
+
+; World-space position of the emitter
+emitter_x =  0.0
+emitter_y = -4.5
+emitter_z =  0.0
+
+[bounds]
+; Axis-aligned bounding box – particles reflect off all six faces
+bbox_min_x = -8.0
+bbox_min_y = -5.0
+bbox_min_z = -8.0
+bbox_max_x =  8.0
+bbox_max_y = 10.0
+bbox_max_z =  8.0
